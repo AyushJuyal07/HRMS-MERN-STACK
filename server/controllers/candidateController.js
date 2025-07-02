@@ -38,13 +38,37 @@ export const deleteCandidate = async (req, res) => {
       return res.status(404).json({ message: 'Candidate not found' });
     }
 
-    if (candidate.resumeUrl && fs.existsSync(candidate.resumeUrl)) {
-      fs.unlinkSync(candidate.resumeUrl);
-    }
+    // if (candidate.resumeUrl && fs.existsSync(candidate.resumeUrl)) {
+    //   fs.unlinkSync(candidate.resumeUrl);
+    // }
 
     await candidate.deleteOne();
     res.status(200).json({ message: 'Candidate deleted successfully' });
   } catch (err) {
     res.status(500).json({ message: 'Error deleting candidate' });
+  }
+};
+
+export const updateCandidateStatus = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { status } = req.body;
+
+    if (!status) {
+      return res.status(400).json({ message: 'Status is required' });
+    }
+
+    const candidate = await Candidate.findById(id);
+    if (!candidate) {
+      return res.status(404).json({ message: 'Candidate not found' });
+    }
+
+    candidate.status = status;
+    await candidate.save();
+
+    res.status(200).json({ message: 'Status updated successfully' });
+  } catch (err) {
+    console.error('Error updating candidate status:', err);
+    res.status(500).json({ message: 'Server error while updating status' });
   }
 };

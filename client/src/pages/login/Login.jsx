@@ -17,7 +17,7 @@ const Login = () => {
       const res = await api.post('/auth/login', { email, password });
       localStorage.setItem('token', res.data.token);
       toast.success('Login successful');
-      navigate('/dashboard'); 
+      navigate('/dashboard/candidates'); 
     } catch (err) {
       toast.error(err.response?.data?.message || 'Login failed');
     }

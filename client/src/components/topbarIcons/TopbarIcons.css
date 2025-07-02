@@ -1,0 +1,22 @@
+.topbar-icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  font-size: 18px;
+  color: #6b7280;
+}
+
+.topbar-icons .icon {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.topbar-icons .icon:hover {
+  color: #6b46c1;
+}
+
+.profile-icon {
+  font-size: 24px;
+}
