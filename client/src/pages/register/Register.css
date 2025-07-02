@@ -1,0 +1,86 @@
+@import '../login/Login.css';
+
+.password-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.password-field input {
+  padding-right: 45px; 
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 5px;
+  z-index: 1;
+  color: #9CA3AF;
+  transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+  color: #6B46C1;
+}
+
+
+.password-field .password-toggle {
+  top: calc(50% + 10px); 
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.success {
+  color: #10B981;
+  font-size: 14px;
+  margin: -10px 0 10px;
+  font-weight: 500;
+}
+
+.login-right form {
+  gap: 18px; 
+}
+
+button[type="submit"] {
+  margin-top: 15px;
+}
+
+.register-link {
+  margin-top: 25px; 
+}
+
+@media (max-width: 768px) {
+  .login-right form {
+    gap: 16px;
+  }
+  
+  .password-toggle {
+    font-size: 14px;
+    right: 10px;
+  }
+  
+  .password-field input {
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .password-toggle {
+    font-size: 13px;
+    right: 8px;
+  }
+  
+  .password-field input {
+    padding-right: 35px;
+  }
+}
