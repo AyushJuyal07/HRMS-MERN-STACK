@@ -8,7 +8,6 @@ import { toast } from 'react-toastify';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [msg, setMsg] = useState('');
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -16,8 +15,12 @@ const Login = () => {
     try {
       const res = await api.post('/auth/login', { email, password });
       localStorage.setItem('token', res.data.token);
+
+      // Store login timestamp
+      localStorage.setItem('loginTime', new Date().toISOString());
+
       toast.success('Login successful');
-      navigate('/dashboard/candidates'); 
+      navigate('/dashboard/candidates');
     } catch (err) {
       toast.error(err.response?.data?.message || 'Login failed');
     }
@@ -32,12 +35,20 @@ const Login = () => {
         <h2>Welcome to Dashboard</h2>
         <form onSubmit={handleLogin}>
           <label>Email Address*</label>
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email Address" />
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email Address"
+          />
 
           <label>Password*</label>
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
-
-          {msg && <p className="error">{msg}</p>}
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+          />
 
           <div className="form-footer">
             <a href="#">Forgot password?</a>
@@ -55,3 +66,4 @@ const Login = () => {
 };
 
 export default Login;
+

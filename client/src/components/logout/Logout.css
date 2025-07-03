@@ -1,0 +1,74 @@
+/* src/components/logout/LogoutModal.css */
+.logout-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.logout-modal {
+  background: white;
+  border-radius: 12px;
+  width: 400px;
+  padding: 0  0 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.logout-header {
+  background-color: #4C1D95;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 16px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.logout-body {
+  padding: 20px;
+  font-size: 16px;
+}
+
+.logout-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.cancel-btn {
+  background-color: #4C1D95;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn:hover {
+  background-color: #6D28D9; /* a lighter purple for hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* optional shadow */
+}
+
+.logout-btn {
+  background: white;
+  color: #B91C1C;
+  border: 1px solid #B91C1C;
+  padding: 10px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: #B91C1C;
+  color: white;
+}

@@ -19,7 +19,7 @@
   width: 700px;
   max-width: 90%;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
+  /* overflow: hidden; */
   animation: fadeIn 0.3s ease;
 }
 
@@ -111,6 +111,22 @@
   color: #9ca3af;
   cursor: not-allowed;
 }
+
+.row select {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #1f2937;
+  background: #f9fafb;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='gray' class='bi bi-caret-down-fill' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14l-4.796-5.481C2.093 5.384 2.432 4.5 3.177 4.5h9.646c.745 0 1.084.884.726 1.159l-4.796 5.481a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 16px 16px;
+}
+
 
 @keyframes fadeIn {
   from {

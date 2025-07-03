@@ -1,0 +1,217 @@
+.leave-table {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.leave-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.leave-table thead {
+  background: linear-gradient(135deg, #6B46C1, #7C3AED);
+  color: white;
+}
+
+.leave-table thead th {
+  padding: 20px 24px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  border: none;
+}
+
+.leave-table thead th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.leave-table thead th:last-child {
+  border-top-right-radius: 12px;
+}
+
+.leave-table tbody tr {
+  border-bottom: 1px solid #e9ecef;
+  transition: background-color 0.2s ease;
+}
+
+.leave-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.leave-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.leave-table tbody td {
+  padding: 20px 24px;
+  vertical-align: middle;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Employee name styling */
+.leave-table tbody td:first-child {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* Date styling */
+.leave-table tbody td:nth-child(2) {
+  color: #666;
+  font-family: 'Courier New', monospace;
+}
+
+/* Reason styling */
+.leave-table tbody td:nth-child(3) {
+  color: #555;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Document download button */
+.doc-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  color: #495057;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.doc-download:hover {
+  background: #e9ecef;
+  border-color: #adb5bd;
+  color: #343a40;
+}
+
+.doc-download svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Status select dropdown */
+.status-select {
+  padding: 8px 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  min-width: 100px;
+  text-align: center;
+  transition: all 0.2s ease;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 12px;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  padding-right: 32px;
+}
+
+.status-select:focus {
+  outline: none;
+  border-color: #7b2cbf;
+  box-shadow: 0 0 0 3px rgba(123, 44, 191, 0.1);
+}
+
+/* Status-specific styling */
+.status-select.pending {
+  background-color: #fff3cd;
+  border-color: #ffeaa7;
+  color: #856404;
+}
+
+.status-select.approved {
+  background-color: #d4edda;
+  border-color: #00b894;
+  color: #155724;
+}
+
+.status-select.rejected {
+  background-color: #f8d7da;
+  border-color: #e17055;
+  color: #721c24;
+}
+
+/* Disabled state */
+.status-select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6c757d;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .leave-table {
+    margin: 10px;
+    border-radius: 8px;
+  }
+  
+  .leave-table thead th,
+  .leave-table tbody td {
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+  
+  .leave-table thead th:first-child,
+  .leave-table thead th:last-child {
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .status-select {
+    min-width: 80px;
+    font-size: 11px;
+    padding: 6px 8px;
+    padding-right: 24px;
+  }
+  
+  .doc-download {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+  
+  .doc-download svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .leave-table {
+    overflow-x: auto;
+  }
+  
+  .leave-table table {
+    min-width: 600px;
+  }
+  
+  .leave-table thead th,
+  .leave-table tbody td {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  
+  .leave-table tbody td:nth-child(3) {
+    max-width: 150px;
+  }
+}

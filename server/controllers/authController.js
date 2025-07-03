@@ -53,3 +53,10 @@ export const login = async (req, res) => {
     res.status(500).json({ message: 'Server error', error: err.message });
   }
 };
+
+
+export const logoutUser = (req, res) => {
+  // If using a token blacklist, add the current token to it here
+  res.status(200).json({ message: 'User logged out successfully' });
+};
+

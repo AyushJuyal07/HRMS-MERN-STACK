@@ -1,0 +1,234 @@
+/* .leaves-page {
+  padding: 24px;
+  background-color: #f8fafc;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.leaves-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.filters select,
+.search-input {
+  padding: 8px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.add-btn {
+  margin-left: 12px;
+  background: linear-gradient(135deg, #6B46C1, #7C3AED);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.leaves-body {
+  display: flex;
+  gap: 24px;
+}
+
+.leaves-table {
+  flex: 2;
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.leave-calendar {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.profile-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.emp-name {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.emp-position {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.calendar-placeholder {
+  height: 250px;
+  background: #f3f4f6;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-icon {
+  cursor: pointer;
+  color: #4b5563;
+} */
+
+
+/* Leaves.css */
+.leaves-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f8f9fa;
+  padding: 20px;
+  /* margin-left: 240px; */
+}
+
+.leaves-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.leaves-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.leaves-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.status-filter {
+  padding: 8px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  font-size: 14px;
+  color: #666;
+  min-width: 100px;
+}
+
+.search-input {
+  padding: 8px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  font-size: 14px;
+  width: 200px;
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.add-leave-btn {
+  background: #7c3aed;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-leave-btn:hover {
+  background: #6d28d9;
+}
+
+.leaves-content {
+  display: flex;
+  gap: 24px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.leaves-table-wrapper{
+    width: 80%;
+}
+
+
+/* .leaves-table-section {
+  flex: 2;
+  background: white;
+  border-radius: 12px;
+  padding: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+} */
+
+/* .leaves-calendar-section {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 140px);
+} */
+
+/* Leave Table Styles */
+
+
+/* Calendar Styles */
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .leaves-content {
+    flex-direction: column;
+  }
+  
+  .leaves-calendar-section {
+    max-height: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .leaves-page {
+    margin-left: 0;
+    padding: 16px;
+  }
+  
+  .leaves-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+  
+  .leaves-actions {
+    justify-content: space-between;
+  }
+  
+  .filters {
+    flex: 1;
+  }
+  
+  .search-input {
+    flex: 1;
+  }
+}

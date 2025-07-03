@@ -6,17 +6,60 @@
   padding-bottom: 1rem;
   font-size: 18px;
   color: #6b7280;
+  position: relative;          
 }
 
-.topbar-icons .icon {
+.topbar-icons .icon,
+.topbar-icons .chevron {
   cursor: pointer;
   transition: color 0.2s ease;
 }
 
-.topbar-icons .icon:hover {
+.topbar-icons .icon:hover,
+.topbar-icons .chevron:hover {
   color: #6b46c1;
 }
 
 .profile-icon {
-  font-size: 24px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 100px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 1000;
+}
+
+.dropdown-menu button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #111827;
+  text-align: left;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.dropdown-menu button:hover {
+  color: #6b46c1;
 }

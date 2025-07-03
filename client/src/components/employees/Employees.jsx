@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import api from '../../services/api';
 import { FiMoreVertical, FiEdit2, FiTrash2 } from 'react-icons/fi';
-import EditEmpoyees from './EditEmployess';
+import EditEmpoyees from './EditEmployees';
+import './Employees.css';
 
 const Employees = () => {
   const [employees, setEmployees] = useState([]);
@@ -11,6 +12,7 @@ const Employees = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeAction, setActiveAction] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [currentEmployee, setCurrentEmployee] = useState(null);
 
   useEffect(() => {
     const fetchEmployees = async () => {
@@ -74,22 +76,22 @@ const Employees = () => {
     }
   };
 
-  const handleEditEmpoyees = async (formData) => {
+  const handleEditEmployees = async (updatedData, id) => {
     try {
       const token = localStorage.getItem('token');
-      await api.post('candidates/create', formData, {
+      await api.patch(`employees/update/${id}`, updatedData, {
         headers: {
           Authorization: `Bearer ${token}`,
-          'Content-Type': 'multipart/form-data',
-        },
+          'Content-Type': 'application/json'
+        }
       });
       setShowModal(false);
-      const updated = await api.get('candidates/get', {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      setEmployees(updated.data);
+      const updated = employees.map(emp =>
+        emp._id === id ? { ...emp, ...updatedData } : emp
+      );
+      setEmployees(updated);
     } catch (err) {
-      console.error('Error adding candidate:', err);
+      console.error('Error updating employee:', err);
     }
   };
 
@@ -121,7 +123,7 @@ const Employees = () => {
         <table>
           <thead>
             <tr>
-              <th>Sr no.</th>
+              <th>Profile</th>
               <th>Employee Name</th>
               <th>Email Address</th>
               <th>Phone Number</th>
@@ -132,9 +134,14 @@ const Employees = () => {
             </tr>
           </thead>
           <tbody>
-            {filteredEmployees.map((e, idx) => (
+            {filteredEmployees.map((e) => (
               <tr key={e._id}>
-                <td>{String(idx + 1).padStart(2, '0')}</td>
+                <td>
+                  <img className='profileImage'
+                    src={e.profileUrl || 'https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg?semt=ais_hybrid&w=740'}
+                    alt="Profile"
+                  />
+                </td>
                 <td>{e.name}</td>
                 <td>{e.email}</td>
                 <td>{e.phoneNumber}</td>
@@ -149,11 +156,18 @@ const Employees = () => {
                     />
                     {activeAction === e._id && (
                       <div className="dropdown-actions">
-                        {/* <div ><FiEdit2 /> Edit</div> */}
-                        <button onClick={() => setShowModal(true)}>
-                          <FiEdit2 />edit
+                        <button
+                          className="dropdown-button"
+                          onClick={() => {
+                            setCurrentEmployee(e);
+                            setShowModal(true);
+                          }}
+                        >
+                          <FiEdit2 /> Edit
                         </button>
-                        <div onClick={() => handleDelete(e._id)}><FiTrash2 /> Delete</div>
+                        <div className="dropdown-button" onClick={() => handleDelete(e._id)}>
+                          <FiTrash2 /> Delete
+                        </div>
                       </div>
                     )}
                   </div>
@@ -163,10 +177,11 @@ const Employees = () => {
           </tbody>
         </table>
       </div>
-            {showModal && (
+      {showModal && (
         <EditEmpoyees
           onClose={() => setShowModal(false)}
-          onSubmit={handleEditEmpoyees}
+          onSubmit={(data) => handleEditEmployees(data, currentEmployee._id)}
+          initialData={currentEmployee}
         />
       )}
     </div>
@@ -174,3 +189,4 @@ const Employees = () => {
 };
 
 export default Employees;
+

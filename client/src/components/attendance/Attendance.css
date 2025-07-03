@@ -3,7 +3,7 @@
  .dropdown-actions {
   display: flex;
   flex-direction: column;
-  gap: 8px; /* adjust spacing as needed */
+  gap: 8px; 
  }
 
 .dropdown-button {
@@ -18,7 +18,7 @@
 }
 
 .dropdown-button:hover {
-  opacity: 0.8; /* optional hover effect */
+  opacity: 0.8; 
 }
 
 .profileImage{
@@ -26,3 +26,18 @@
     height: 40px;
     border-radius: 50%;
 }
+
+.status-select.present {
+  background-color: #ecfdf5;
+  color: #16a34a;
+  border-color: #bbf7d0;
+  font-weight: 600;
+}
+
+.status-select.absent {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border-color: #fecaca;
+  font-weight: 600;
+}
+
