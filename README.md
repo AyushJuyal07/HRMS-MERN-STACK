@@ -66,12 +66,14 @@ A modern, responsive HRMS dashboard built with the MERN Stack (MongoDB, Express,
 
 PORT=5000
 MONGODB_URI=your_mongo_uri
-JWT_SECRET=jwt_key
+JWT_SECRET=your_jwt_secret
 TOKEN_EXPIRES_IN=2h
 
 ### 🌐 Frontend (`/client/.env`)
 
 REACT_APP_API_URL=
+
+---
 
 ## 📸 Screenshots
 
