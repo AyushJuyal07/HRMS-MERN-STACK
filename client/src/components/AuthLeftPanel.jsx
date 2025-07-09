@@ -6,10 +6,10 @@ const AuthLeftPanel = () => {
     <div className="login-left">
       <img src={img} alt="Dashboard" />
       <p className="title">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        Manage your team with clarity and confidence
       </p>
       <p className="desc">
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...
+        Empower your HR operations with real-time insights, seamless workflows, and intuitive dashboards — all in one place...
       </p>
       <div className="dots">
         <div className="dot active"></div>
