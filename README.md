@@ -77,10 +77,10 @@ REACT_APP_API_URL=
 
 ## 📸 Screenshots
 
-> ✅ Dashboard layout with fixed Sidebar and Topbar  
-> ✅ Modular Leave Management with Calendar  
-> ✅ Popups, filters, status dropdowns, and more  
-> *(Insert screenshots here)*
+> ![image](https://github.com/user-attachments/assets/5c2d6c07-9c36-4c37-ae0a-ca0fe152ff19)
+> ![image](https://github.com/user-attachments/assets/aa7b972a-2a65-4e92-bfca-e8eea73b0403)
+![image](https://github.com/user-attachments/assets/49ae9698-8a5f-4a59-b0fa-f98d3f49d1cc)
+![image](https://github.com/user-attachments/assets/b5880f62-35b2-4a31-96d4-d498ef896a91)
 
 ---
 
