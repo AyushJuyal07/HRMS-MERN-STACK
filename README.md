@@ -2,7 +2,7 @@
 
 A modern, responsive HRMS dashboard built with the MERN Stack (MongoDB, Express, React, Node.js) to streamline candidate, employee, leave, and attendance management for HR professionals.
 
-![HRMS Preview](https://your-screenshot-or-demo-link.png)
+![HRMS Preview}(https://hrms-mern-stack.vercel.app/)
 
 ---
 
@@ -47,3 +47,42 @@ A modern, responsive HRMS dashboard built with the MERN Stack (MongoDB, Express,
 
 ## 📦 Folder Structure
 
+📁 client/
+└── src/
+├── components/
+├── pages/
+└── services/
+
+📁 server/
+├── controllers/
+├── models/
+├── routes/
+└── middleware/
+
+---
+
+## ⚙️ Environment Variables
+
+### 🔐 Backend (`/server/.env`)
+
+PORT=5000
+MONGODB_URI=your_mongo_uri
+JWT_SECRET=jwt_key
+TOKEN_EXPIRES_IN=2h
+
+### 🌐 Frontend (`/client/.env`)
+
+REACT_APP_API_URL=
+
+## 📸 Screenshots
+
+> ✅ Dashboard layout with fixed Sidebar and Topbar  
+> ✅ Modular Leave Management with Calendar  
+> ✅ Popups, filters, status dropdowns, and more  
+> *(Insert screenshots here)*
+
+---
+
+## 👨‍💻 Author
+
+**Ayush Juyal**  
