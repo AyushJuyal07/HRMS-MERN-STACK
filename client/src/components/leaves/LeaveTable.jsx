@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FiDownload } from 'react-icons/fi';
 import api from '../../services/api';
-import './LeaveTable.css'
+import './LeaveTable.css';
 
 const LeaveTable = ({ leaves, searchTerm, statusFilter, onStatusChange }) => {
   const [updatingId, setUpdatingId] = useState(null);
@@ -50,17 +50,17 @@ const LeaveTable = ({ leaves, searchTerm, statusFilter, onStatusChange }) => {
         <tbody>
           {filtered.map((leave) => (
             <tr key={leave._id}>
-              <td>{leave.employee?.name}</td>
-              <td>{leave.date?.split('T')[0]}</td>
-              <td>{leave.reason}</td>
-              <td>
+              <td data-label="Name">{leave.employee?.name}</td>
+              <td data-label="Date">{leave.date?.split('T')[0]}</td>
+              <td data-label="Reason">{leave.reason}</td>
+              <td data-label="Document">
                 {leave.document && (
                   <button className="doc-download" onClick={() => handleDownload(leave.document)}>
                     <FiDownload /> Download
                   </button>
                 )}
               </td>
-              <td>
+              <td data-label="Status">
                 <select
                   value={leave.status}
                   onChange={(e) => handleStatusUpdate(leave._id, e.target.value)}

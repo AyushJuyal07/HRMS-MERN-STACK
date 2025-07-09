@@ -41,20 +41,24 @@
   display: flex;
   gap: 12px;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .search-input {
-  padding: 8px 16px;
+  flex: 1;
+  min-width: 200px;
+  max-width: 400px;
+  padding: 8px 16px 8px 40px;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
   background: white;
   font-size: 14px;
-  width: 250px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23cbd5e1'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'%3E%3C/path%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: 12px center;
   background-size: 16px;
-  padding-left: 40px;
 }
 
 .search-input:focus {
@@ -283,12 +287,16 @@ tbody td:nth-child(7) {
   }
   
   .right-tools {
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: stretch;
   }
-  
+
   .search-input {
-    flex: 1;
-    width: auto;
+    width: 100%;
+  }
+
+  .add-btn {
+    width: 100%;
   }
   
   .candidates-table {
