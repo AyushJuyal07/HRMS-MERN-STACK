@@ -37,11 +37,10 @@ A modern, responsive HRMS dashboard built with the MERN Stack (MongoDB, Express,
 
 ## 🛠 Tech Stack
 
-- **Frontend**: React.js, React Router, Axios, CSS  
+- **Frontend**: React.js, Vanila CSS  
 - **Backend**: Node.js, Express.js, MongoDB, Mongoose  
 - **Authentication**: JWT  
 - **Calendar**: `react-calendar`  
-- **Styling**: Fully custom modular CSS (Figma-accurate)
 
 ---
 
