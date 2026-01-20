@@ -51,7 +51,7 @@ const Login = () => {
           />
 
           <div className="form-footer">
-            <a href="#">Forgot password?</a>
+            <a href="/forgot-password">Forgot password?</a>
           </div>
 
           <button type="submit" disabled={!email || !password}>Login</button>

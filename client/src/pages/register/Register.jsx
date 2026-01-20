@@ -32,7 +32,7 @@ const Register = () => {
     }
 
     try {
-      const regRes = await api.post('/auth/register', {
+      await api.post('/auth/register', {
         name: formData.name,
         email: formData.email,
         password: formData.password

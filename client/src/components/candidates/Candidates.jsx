@@ -1,7 +1,7 @@
 import './Candidatess.css';
 import { useEffect, useState } from 'react';
 import api from '../../services/api';
-import { FiMoreVertical, FiDownload, FiEdit2, FiTrash2 } from 'react-icons/fi';
+import { FiMoreVertical, FiDownload, FiTrash2 } from 'react-icons/fi';
 import AddCandidateModal from './AddCandidatesModal';
 
 const Candidates = () => {
